@@ -1,13 +1,67 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+@layer base {
+  body {
+    @apply font-['Outfit'];
+  }
+  h1 {
+    @apply text-[56px] font-bold leading-[110%];
+  }
+  h2 {
+    @apply text-[48px] font-semibold leading-[100%];
+  }
+  h3 {
+    @apply text-[36px] font-semibold leading-[100%];
+  }
+  h4 {
+    @apply text-[24px] font-semibold leading-[135%];
+  }
+  h5 {
+    @apply text-[20px] font-semibold leading-[145%];
+  }
+  li {
+    @apply list-none text-[18px] font-semibold cursor-pointer;
+  }
+  button {
+    @apply bg-[#0089ff] text-[16px] font-medium rounded-lg text-[#fcfcfc] hover:brightness-110 transition-all hover:shadow-lg;
+  }
+  p {
+    @apply text-[20px] text-[#2c2d30] font-light;
+  }
+  span {
+    @apply font-semibold;
+  }
+  input {
+    @apply w-[480px] h-[48px] rounded-md indent-4 text-xl outline-none;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.fadeOut {
+  animation: fadeOut 5s infinite;
+}
+
+.fadeIn {
+  animation: fadeIn 5s infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
